@@ -63,6 +63,20 @@ public class ArrayListInt
         numeros = new int[0];
     
     }
+    
+    /**
+     *  devuelve true si la colección contiene ese elemento, false en cualquier otro caso.
+     *  si el parámetro está en la colección devuelve true.
+     */
+    public boolean contains(int elemento){
+        boolean contains = false; // 1º VL para guardar el valor.
+        for(int index = 0; index < numeros.length; index ++){//2º recorrer la colección para ir comprobando.
+            if(numeros[index] == elemento){//si la posición index del Arrays contiene el elemento, contains el true.
+                contains = true;
+            }
+        }
+        return contains;
+    }
 }
 
     
