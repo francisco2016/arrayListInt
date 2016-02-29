@@ -117,25 +117,47 @@ public class ArrayListInt
         }
         return index;
     }
-    
+
     /**
      * devuelve true si la lista no contiene elementos
      */
     public boolean isEmpty(){
-       return (numeros.length == 0); //si el tamaño de numeros es == 0;
-       //cuando java ejecuta el return, devuelve automáticamente un valor; true si es cierto,
-       // si la colección contiene 0 elementos o false si no lo es, si contiene algún elemento.
+        return (numeros.length == 0); //si el tamaño de numeros es == 0;
+        //cuando java ejecuta el return, devuelve automáticamente un valor; true si es cierto,
+        // si la colección contiene 0 elementos o false si no lo es, si contiene algún elemento.
     }
-    
+
     /**
      *   devuelve el número de elementos de la colección.
      */
     public int size(){
         return numeros.length;
     }
-    
-    
+
+    /**
+     * elimina de la colección el elemento que ocupa la posición especificada y devuelve dicho elemento.
+     *  Si el valor de index no es válido, no hace nada y devuelve -1.
+     */
+    public int remove(int index){
+        int eliminado = -1;//1º VL para guardar el valor a retornar. 
+        if(index >= 0 && index < numeros.length){//2ºcomprobamos que el parámetro está dentro de los límites del Arrays
+            //como al hacer el borrado, el Arrays se reduce, necesitamos otro Arrays y lo guardo en una VL.
+            int[] nuevoArray = numeros;
+            //luego el Array que tenía lo inicializo con una posición menos.
+            numeros = new int[numeros.length -1];
+            
+            for(int i=0; i < index; i++){//en este 1º for copiamos los datos hasta el index en la posición i:
+                numeros[i] = nuevoArray[i];
+            }
+            for (int i=index; i<numeros.length; i++){//en este 2º for copiamos los elementos que han quedado despues
+                                                    // de que se han borrado, partimos del valor de idex, y se tiene 
+                numeros[i] = nuevoArray[i +1];      // que incrementar hasta que llegue a la segunda posición.
+            }                                       //en este caso copiamos los mismo que en el otro Array, pero en
+            eliminado = nuevoArray[index];          //una casilla menos
+        }                                           //finalmente cosigo el nº del eliminado.
+        return eliminado;// 1º retornamos el valor.  
+    }
+
     
 }
-    
  
