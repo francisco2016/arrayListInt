@@ -91,8 +91,16 @@ public class ArrayListInt
         }
         return elemento;
     }
-
-
+    
+    /**
+     *  reemplaza el elemento en la posición index con el valor de element. Si el índice 
+     * no es válido, no hace nada.
+     */
+    public void set(int index, int element){
+        if(index < numeros.length && index >= 0){//1º compruebo si el valor de index es válido
+            numeros[index] = element; // si lo es, reemplazo el valor por el pasado como parámetro.
+        }
+    }
 }
 
     
