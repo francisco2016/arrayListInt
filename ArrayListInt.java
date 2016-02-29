@@ -61,9 +61,9 @@ public class ArrayListInt
      */ 
     public void clear(){
         numeros = new int[0];
-    
+
     }
-    
+
     /**
      *  devuelve true si la colección contiene ese elemento, false en cualquier otro caso.
      *  si el parámetro está en la colección devuelve true.
@@ -77,11 +77,24 @@ public class ArrayListInt
         }
         return contains;
     }
+    
+    /**
+     * devuelve el elemento existente en la posición indicada. Si el valor de index no es
+     * válido, entonces devuelve -1
+     */
+    public int get(int index)
+    {
+        int elemento = -1;//1º VL para guardar el valor a devolver.
+        if(index < numeros.length && index >= 0)//2º comprobar si el valor pasado como parámetro el válido.
+        {
+            elemento = numeros[index];//pego el elemento en la colección.
+        }
+        return elemento;
+    }
+
+
 }
 
-    
-    
-    
     
     
  
