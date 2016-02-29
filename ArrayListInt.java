@@ -122,9 +122,16 @@ public class ArrayListInt
      * devuelve true si la lista no contiene elementos
      */
     public boolean isEmpty(){
-       return (numeros.length == 0);
+       return (numeros.length == 0); //si el tamaño de numeros es == 0;
        //cuando java ejecuta el return, devuelve automáticamente un valor; true si es cierto,
        // si la colección contiene 0 elementos o false si no lo es, si contiene algún elemento.
+    }
+    
+    /**
+     *   devuelve el número de elementos de la colección.
+     */
+    public int size(){
+        return numeros.length;
     }
     
     
