@@ -77,7 +77,7 @@ public class ArrayListInt
         }
         return contains;
     }
-    
+
     /**
      * devuelve el elemento existente en la posición indicada. Si el valor de index no es
      * válido, entonces devuelve -1
@@ -91,7 +91,7 @@ public class ArrayListInt
         }
         return elemento;
     }
-    
+
     /**
      *  reemplaza el elemento en la posición index con el valor de element. Si el índice 
      * no es válido, no hace nada.
@@ -101,32 +101,34 @@ public class ArrayListInt
             numeros[index] = element; // si lo es, reemplazo el valor por el pasado como parámetro.
         }
     }
-    
+
     /**
      *  devuelve el indice en el que aparece la primera ocurrencia del elemento especificado o -1 en caso de que la 
      *  colección no contenga el elemento especificado.
      */
     public int indexOf(int elemento){
         int index = -1;
-    int cont = 0;
- 		while ((cont < numeros.length) && (index == -1)) {
-     	if (numeros[cont] == elemento) {
-       	index = cont;
-      }
-      cont++;
+        int cont = 0;
+        while ((cont < numeros.length) && (index == -1)) {
+            if (numeros[cont] == elemento) {
+                index = cont;
+            }
+            cont++;
+        }
+        return index;
     }
-    return index;
+    
+    /**
+     * devuelve true si la lista no contiene elementos
+     */
+    public boolean isEmpty(){
+       return (numeros.length == 0);
+       //cuando java ejecuta el return, devuelve automáticamente un valor; true si es cierto,
+       // si la colección contiene 0 elementos o false si no lo es, si contiene algún elemento.
     }
-    
-    
-    
-    
-    
     
     
     
 }
-
-    
     
  
